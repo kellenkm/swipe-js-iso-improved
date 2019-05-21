@@ -249,7 +249,7 @@
             offloadFn(this.transitionEnd(event));
             break;
           case 'resize':
-            offloadFn(setup);
+            //offloadFn(setup);
             break;
         }
 
