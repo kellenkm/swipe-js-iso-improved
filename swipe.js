@@ -80,14 +80,13 @@
 
       element.style.width = slides.length * width + 'px';
 
-      if(!first_time) return;
 
       // stack elements
       var pos = slides.length;
       while (pos--) {
         var slide = slides[pos];
 
-        slide.style.width = width + 'px';
+        if(first_time) slide.style.width = width + 'px';
         slide.setAttribute('data-index', pos);
 
         if (browser.transitions) {
