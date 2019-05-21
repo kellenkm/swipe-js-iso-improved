@@ -53,12 +53,14 @@
       parseInt(options.widthOfSiblingSlidePreview, 10) || 0;
     var continuous = (options.continuous =
       options.continuous !== undefined ? options.continuous : true);
+    var reSetupTimer;
 
     function setup() {
       setupAll(true);
     }
     function reSetup() {
-      setupAll(false);
+      window.clearTimeout(reSetupTimer);
+      reSetupTimer = window.setTimeout(function() {setupAll(false)}, 50);
     }
     function setupAll(first_time) {
       // cache slides
