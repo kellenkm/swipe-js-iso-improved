@@ -81,7 +81,7 @@
       element.style.width = slides.length * width + 'px';
 
       if(!first_time) return;
-       
+
       // stack elements
       var pos = slides.length;
       while (pos--) {
@@ -462,7 +462,7 @@
       window.addEventListener('resize', events, false);
     } else {
       window.onresize = function() {
-        setup();
+        reSetup();
       }; // to play nice with old IE
     }
 
