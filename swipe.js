@@ -67,7 +67,7 @@
 
       // determine width of each slide
       width =
-        Math.round(
+        Math.ceil(
           container.getBoundingClientRect().width || container.offsetWidth
         ) -
         widthOfSiblingSlidePreview * 2;
