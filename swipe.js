@@ -55,6 +55,12 @@
       options.continuous !== undefined ? options.continuous : true);
 
     function setup() {
+      setupAll(true);
+    }
+    function reSetup() {
+      setupAll(false);
+    }
+    function setupAll(first_time) {
       // cache slides
       slides = element.children;
       length = slides.length;
@@ -74,6 +80,8 @@
 
       element.style.width = slides.length * width + 'px';
 
+      if(!first_time) return;
+       
       // stack elements
       var pos = slides.length;
       while (pos--) {
@@ -249,7 +257,7 @@
             offloadFn(this.transitionEnd(event));
             break;
           case 'resize':
-            //offloadFn(setup);
+            offloadFn(reSetup);
             break;
         }
 
