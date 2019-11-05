@@ -14,7 +14,6 @@
   }
 })(this, function() {
   'use strict';
-  if(typeof window === 'undefined') return {};
   
   return function Swipe(container, options) {
     // utilities
