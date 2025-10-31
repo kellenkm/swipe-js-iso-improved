@@ -17,6 +17,8 @@
   
   return function Swipe(container, options) {
     // utilities
+
+    if (typeof window === "undefined") return false;
     var noop = function() {}; // simple no operation function
     var offloadFn = function(fn) {
       setTimeout(fn || noop, 0);
